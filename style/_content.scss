@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Variables
+
+@mixin displayFlex() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+$black: #000;
+$white: #ffffff;
+$red: #D30B41;
+$brown: #242323;
+$gray: #333333;
+$ligthGray: #d7d7d7;
+
+$boxShadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+
+// Content
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    @include displayFlex();
+    min-height: 100vh;
+}
+
+span {
+    display: block;
+}
+
+.pokebola {
+    width: 100%;
+    max-width: 50px;
+}
+
+.pokemon-image {
+    width: 75%;
+    max-width: 180px;
+}
+
+.not-found {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px
+}
+
+.container {
+    @include displayFlex();
+    background-color: $red;
+    border: 3px solid $black;
+    box-shadow: 5px 4px 0px  $black;
+    padding: 15px;
+    border-radius: 10px;
+    .pokedex {
+        input {
+            border: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: $gray;
+            outline: none;
+            color: $white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid $black;
+            width: 100%;
+            &::placeholder {
+                color: $ligthGray;
+            }
+            &:focus {
+                border-color: $white;
+            }
+            &:hover {
+                background-color: $brown;
+            }
+        }
+
+        .input-container {
+            display: flex;
+            align-items: end;
+            gap: 15px;
+
+            #pokemon-number {
+                display: inline-block;
+                color: $white;
+                font-weight: bold;
+                font-size: 1.8rem;
+            }
+        }
+       
+        .img-container {
+            @include displayFlex();
+            flex-direction: column;
+            margin: 15px 0px;
+            background: url('../img/florest.png') no-repeat center center;
+            height: 250px;
+            background-size: cover;
+            border-radius: 5px;
+            border: 2px solid $black;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-container {
+            background-color: $white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid $black;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            .base-stats {
+                @include displayFlex();
+                flex-direction: column;
+            }
+            .name {
+                margin-bottom: 10px;
+                background-color: #424242;
+                font-weight: 500;
+                font-size: 1.2rem;
+                padding: 5px 10px;
+                border-radius: 15px;
+                color: $white;
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+            .title-status {
+                margin-bottom: 5px;
+                font-size: 1.3rem;
+                font-weight: 600;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 4px;
+                    background-color: $red;
+                    bottom: 0px;
+                    left: 0px;
+                    position: absolute;
+                }
+            }
+            .statistics {
+                padding-bottom: 5px;
+                .type-status {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background-color: $black;
+                        bottom: 0px;
+                        left: 0px;
+                        position: absolute;
+                    }
+                }
+                .status, .status-number{
+                    border-bottom: 2px solid $black;
+                    padding-top: 8px;
+                    padding-bottom: 2px;
+                    font-weight: 600;
+                    font-size: 1.1rem; 
+                }
+            }            
+        }  
+        .buttons {
+            @include displayFlex();
+            gap: 10px;
+            button {
+                padding: 2px;
+                position: relative;
+                width: 100%;
+                margin-top: 10px;
+                background-color: $gray;
+                border: 2px solid $black;
+                color: $white;
+                border-radius: 5px;
+                @include displayFlex();
+                gap: 10px;
+                cursor: pointer;
+                box-shadow: 4px 4px 0px  $black;
+                &:hover {
+                    background-color: $brown;
+                }
+                &:focus {
+                    border-color: $white;
+                }
+                &:active {
+                    top: 2px;
+                    
+                }
+                .arrow {
+                    display: inline-block;
+                    font-size: 2rem;
+                }
+            }
+        }   
+    }
+}

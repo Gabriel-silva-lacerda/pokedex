@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <script defer src="index.js"></script>
+    <title>Pokédex</title>
+</head>
+<body>
+    <div class="container">
+        <div class="pokedex">
+            <div class="input-container">
+                <img src="img/pokebola.png" alt="" class="pokebola">
+                <input type="text" placeholder="Type a pokemon ">
+                <span id="pokemon-number"></span>
+            </div>
+            <div class="img-container">
+                <img src="" alt="" class="pokemon-image">
+                <img src="" alt="" class="not-found">
+            </div>
+            <div class="stats-container">
+                <div class="base-stats">
+                    <span class="name"></span>
+                    <span class="title-status">Base Stats</span>
+                </div>
+                <div class="statistics">
+                    <div class="type-status">
+                        <span class="status hp">HP</span>
+                        <span class="status-number"></span>
+                    </div>
+                    <div class="type-status">
+                        <span class="status atk">ATK</span>
+                        <span class="status-number"></span>
+                    </div>
+                    <div class="type-status">
+                        <span class="status def">DEF</span>
+                        <span class="status-number"></span>
+                    </div>
+                    <div class="type-status">
+                        <span class="status satk">SATK</span>
+                        <span class="status-number"></span>
+                    </div>
+                    <div class="type-status">
+                        <span class="status sdef">SDEF</span>
+                        <span class="status-number"></span>
+                    </div>
+                    <div class="type-status">
+                        <span class="status spd">SPD</span>
+                        <span class="status-number"></span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="prev"><span class="arrow"><</span> Prev</button>
+                <button class="next">Next <span class="arrow">></span></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
